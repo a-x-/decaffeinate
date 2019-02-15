@@ -1,0 +1,23 @@
+export declare type Options = {
+    filename?: string;
+    useCS2?: boolean;
+    runToStage?: string | null;
+    literate?: boolean;
+    disableSuggestionComment?: boolean;
+    useOptionalChaining?: boolean;
+    noArrayIncludes?: boolean;
+    useJSModules?: boolean;
+    looseJSModules?: boolean;
+    safeImportFunctionIdentifiers?: Array<string>;
+    preferLet?: boolean;
+    loose?: boolean;
+    looseDefaultParams?: boolean;
+    looseForExpressions?: boolean;
+    looseForOf?: boolean;
+    looseIncludes?: boolean;
+    looseComparisonNegation?: boolean;
+    disableBabelConstructorWorkaround?: boolean;
+    disallowInvalidConstructors?: boolean;
+};
+export declare const DEFAULT_OPTIONS: Options;
+export declare function resolveOptions(options: Options): Options;

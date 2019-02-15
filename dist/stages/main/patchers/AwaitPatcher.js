@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var NodePatcher_1 = require("./../../../patchers/NodePatcher");
+var AwaitPatcher = /** @class */ (function (_super) {
+    tslib_1.__extends(AwaitPatcher, _super);
+    function AwaitPatcher(patcherContext, expression) {
+        var _this = _super.call(this, patcherContext) || this;
+        _this.expression = expression;
+        return _this;
+    }
+    AwaitPatcher.prototype.initialize = function () {
+        this.awaits();
+        this.expression.setRequiresExpression();
+    };
+    AwaitPatcher.prototype.patchAsExpression = function (_a) {
+        var _b = (_a === void 0 ? {} : _a).needsParens, needsParens = _b === void 0 ? true : _b;
+        this.expression.patch({ needsParens: needsParens });
+    };
+    return AwaitPatcher;
+}(NodePatcher_1.default));
+exports.default = AwaitPatcher;
